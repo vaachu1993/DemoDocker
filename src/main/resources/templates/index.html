@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Hoang Minh Tri - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#0f172a',
+                        card: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-white">
+    
+    <!-- Background Animated Blobs -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 2s"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" style="animation-delay: 4s"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-bold tracking-tighter gradient-text">MT.</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Trang chủ</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Giới thiệu</a>
+                        <a href="#skills" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Kỹ năng</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div class="text-center animate-fade-in-up">
+                <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm">
+                    <span class="text-sm font-medium text-gray-300">👋 Chào mừng bạn đến với portfolio của tôi</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                    Xin chào, tôi là <br/>
+                    <span class="gradient-text">Nguyễn Hoàng Minh Trí</span>
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light">
+                    Một Software Engineer đam mê tạo ra các sản phẩm công nghệ tuyệt vời và mang lại trải nghiệm tốt nhất cho người dùng.
+                </p>
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="#contact" class="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                        Liên hệ ngay
+                    </a>
+                    <a href="#about" class="px-8 py-3 rounded-full bg-gray-800 text-white font-medium hover:bg-gray-700 transition-colors border border-gray-700">
+                        Tìm hiểu thêm
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="mt-12 flex justify-center gap-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl transition-colors hover:scale-110 transform duration-200">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[#0A66C2] text-2xl transition-colors hover:scale-110 transform duration-200">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-[#1877F2] text-2xl transition-colors hover:scale-110 transform duration-200">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-2xl transform rotate-3 opacity-20 blur-lg"></div>
+                    <div class="relative glass rounded-2xl p-8 border border-gray-700">
+                        <h2 class="text-3xl font-bold mb-6 gradient-text">Về bản thân</h2>
+                        <p class="text-gray-400 mb-4 leading-relaxed">
+                            Tôi luôn không ngừng học hỏi và cải thiện kỹ năng lập trình của mình. Tôi thích giải quyết các vấn đề phức tạp và biến những ý tưởng sáng tạo thành hiện thực thông qua code.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            Với kinh nghiệm làm việc với các công nghệ hiện đại, tôi tự tin có thể đóng góp vào sự thành công cho các dự án mà mình tham gia.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="glass p-6 rounded-xl border border-gray-800 card-hover text-center">
+                        <div class="text-primary text-4xl mb-3"><i class="fas fa-code"></i></div>
+                        <h3 class="font-bold text-lg mb-1">Development</h3>
+                        <p class="text-sm text-gray-400">Web & API</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-gray-800 card-hover text-center mt-6">
+                        <div class="text-teal-400 text-4xl mb-3"><i class="fas fa-server"></i></div>
+                        <h3 class="font-bold text-lg mb-1">Backend</h3>
+                        <p class="text-sm text-gray-400">Java & Spring</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-gray-800 card-hover text-center -mt-6">
+                        <div class="text-blue-400 text-4xl mb-3"><i class="fas fa-desktop"></i></div>
+                        <h3 class="font-bold text-lg mb-1">Frontend</h3>
+                        <p class="text-sm text-gray-400">HTML, CSS, JS</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-gray-800 card-hover text-center">
+                        <div class="text-purple-400 text-4xl mb-3"><i class="fas fa-database"></i></div>
+                        <h3 class="font-bold text-lg mb-1">Database</h3>
+                        <p class="text-sm text-gray-400">SQL & NoSQL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Các kỹ năng <span class="gradient-text">nổi bật</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Những công nghệ tôi đang sử dụng và có kinh nghiệm thực tế.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fab fa-java text-5xl text-gray-400 group-hover:text-red-500 transition-colors"></i>
+                    <span class="font-medium">Java</span>
+                </div>
+                <!-- Skill 2 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fas fa-leaf text-5xl text-gray-400 group-hover:text-green-500 transition-colors"></i>
+                    <span class="font-medium">Spring Boot</span>
+                </div>
+                <!-- Skill 3 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fab fa-html5 text-5xl text-gray-400 group-hover:text-orange-500 transition-colors"></i>
+                    <span class="font-medium">HTML5/CSS3</span>
+                </div>
+                <!-- Skill 4 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fab fa-js text-5xl text-gray-400 group-hover:text-yellow-400 transition-colors"></i>
+                    <span class="font-medium">JavaScript</span>
+                </div>
+                <!-- Skill 5 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <svg class="w-12 h-12 text-gray-400 group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.208,0-6.247,1.584-8.039,4.288L2.5,11.232v4.208l1.462,2.144C5.754,20.288,8.793,21.872,12.001,21.872 c3.208,0,6.247-1.584,8.039-4.288l1.462-2.144v-4.208l-1.462-2.144C18.248,6.384,15.209,4.8,12.001,4.8z M12.001,19.312 c-2.22,0-4.331-1.076-5.6-2.928L5.333,14.88v-3.104l1.068-1.504c1.269-1.852,3.38-2.928,5.6-2.928c2.22,0,4.331,1.076,5.6,2.928 l1.068,1.504v3.104l-1.068,1.504C16.332,18.236,14.221,19.312,12.001,19.312z"></path></svg>
+                    <span class="font-medium">TailwindCSS</span>
+                </div>
+                <!-- Skill 6 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fas fa-database text-5xl text-gray-400 group-hover:text-blue-400 transition-colors"></i>
+                    <span class="font-medium">MySQL/PostgreSQL</span>
+                </div>
+                <!-- Skill 7 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fab fa-git-alt text-5xl text-gray-400 group-hover:text-orange-600 transition-colors"></i>
+                    <span class="font-medium">Git</span>
+                </div>
+                <!-- Skill 8 -->
+                <div class="glass p-6 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 card-hover group">
+                    <i class="fab fa-docker text-5xl text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+                    <span class="font-medium">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+            <div class="glass rounded-2xl p-8 md:p-12 border border-gray-700 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+                <h2 class="text-3xl font-bold mb-4 relative z-10">Bạn có dự án muốn hợp tác?</h2>
+                <p class="text-gray-400 mb-8 relative z-10">Đừng ngần ngại liên hệ với tôi để cùng nhau tạo ra những phần mềm và ứng dụng web xuất sắc nhất.</p>
+                <a href="mailto:contact@example.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 text-white font-bold hover:shadow-lg hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-1 relative z-10">
+                    <i class="fas fa-paper-plane"></i> Liên hệ với tôi
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-12 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 Nguyen Hoang Minh Tri. All rights reserved.
+            </p>
+            <div class="flex gap-4">
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
